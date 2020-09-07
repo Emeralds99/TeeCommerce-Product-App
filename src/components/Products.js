@@ -23,6 +23,7 @@ class Products extends React.Component {
 
   render() {
     let products = this.state.response
+    console.log({products})
 
     return (
       <div>
