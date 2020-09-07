@@ -6,12 +6,23 @@ Content-Type: application/json
 {
     "username":"erick-pacheco",
     "description": "posting",
-    "date": "6:34 PM"
+    "date": "6/9/20"
 }
 
-### testing get request
+### testing get request for users database
 
-GET http://localhost:5000/users/
+POST http://localhost:5000/users/add
+Content-Type: application/javascript
+
+{
+    "username":"erick-stack",
+    "description":"A post request",
+    "date": "8:09"
+}
+
+### get users
+
+GET http://localhost:5000/users/ 
 
 ### testing crud
 

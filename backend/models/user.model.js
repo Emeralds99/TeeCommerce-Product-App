@@ -6,9 +6,14 @@ const userSchema = new Schema(
     username: {
       type: String,
       required: true,
-      unique: true,
-      trim: true,
-      minlength: 3,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: Date,
+      required: true,
     },
   },
   {
@@ -16,6 +21,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("userSchemas", userSchema);
 
 module.exports = User;
