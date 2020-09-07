@@ -20,10 +20,6 @@ img {
   width: 120px;
 }
 
-.container {
-  background-image: url("./image-assets/teeLogin.png");
-  height: 700px;
-}
 
 .logos {
   float: right;

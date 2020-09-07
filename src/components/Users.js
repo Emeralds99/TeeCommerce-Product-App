@@ -22,10 +22,11 @@ class Users extends React.Component {
 
   render() {
     let users = this.state.response
+    console.log({users})
     return (
       <div>
-          {users.map((product) =>
-            <p key={product._id}>{product._id}</p>
+          {users.map((user) =>
+            <p key={user._id}>{user.username}</p>
           )}
       </div>
     );

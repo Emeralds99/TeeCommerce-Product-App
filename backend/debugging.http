@@ -98,7 +98,7 @@ Content-Type: application/json
 
 ### testing // UPDATE /POST new product 
 
-POST  http://localhost:5000/products/update/5f540753db2f673bb006fd32
+POST  http://localhost:5000/products/add
 Content-Type: application/json
 
 {
