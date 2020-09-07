@@ -1,22 +1,44 @@
 import React from "react";
 import "./App.css";
-import LoginButton from "./components/LoginButton";
-import LogoutButton from "./components/LogoutButton";
-import Profile from "./components/Profile";
-import { useAuth0 } from "@auth0/auth0-react";
-
+import Products from "./components/Products";
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import Users from "./components/Users";
+ 
 function App() {
-  const { isLoading } = useAuth0();
-
-  if (isLoading) return <div>Loading...</div>;
-
   return (
-    <>
-      <LoginButton />
-      <LogoutButton />
-      <Profile />
-    </>
-  );
+    <Router>
+      <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm" >
+        
+        <ul className='navbar-nav mr-auto'>
+          <li className='nav-item nav-link'>
+            <Link to="/">Home</Link>
+          </li>
+          <li className='nav-item nav-link'>
+            <Link to='/products'>Products</Link>
+          </li>
+          <li className='nav-item nav-link'>
+            <Link to='/users'>Users</Link>
+          </li>
+          <li className='nav-item nav-link'>
+            <Link to='/info'>Information</Link>
+          </li>
+        </ul>
+      </div>
+      <hr/>
+
+
+      <Switch>
+        <Route exact path='/' >
+        </Route>
+        <Route path='/products'>
+        <Products/>
+        </Route>
+        <Route path='/users'>
+          <Users/>
+        </Route>
+      </Switch>
+    </Router>
+  )
 }
 
 export default App;
