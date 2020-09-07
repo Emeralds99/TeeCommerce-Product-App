@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div >
         
-        <ul className='navbar navbar-expand-lg navbar-light bg-light'>
+        <ul className='container d-flex flex-column flex-md-row justify-content-between'>
           <li className='nav-item nav-link'>
             <Link to="/">Home</Link>
           </li>
