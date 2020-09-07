@@ -26,8 +26,29 @@ class Products extends React.Component {
     console.log({products})
     return (
       <div>
+        <table className='table'>
+          <thead>
+            <tr>
+              <th scope='col'>
+                ID
+              </th>
+              <th scope='col'>
+                Name
+              </th>
+              <th scope='col'>
+                Brand
+              </th>
+              <th scope='col'>
+                Last Update
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
 
-    <div><strong>TODO: add EDIT, UPDATE, and DELETE functionality for each product</strong></div>
+        </table>
+
           {products.map((product) =>
             <p key={product._id}>{product.name}</p>
           )}

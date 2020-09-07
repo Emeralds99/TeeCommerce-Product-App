@@ -4,7 +4,7 @@ function Homepage(){
 
     
         return(
-            <div className='container'>Welcome!</div>
+            <div className='container'>Welcome! to the ProductHub</div>
         )
 }
 
