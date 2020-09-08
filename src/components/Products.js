@@ -1,4 +1,6 @@
 import React from "react";
+import ProductEntryForm from './NewProductForm'
+
 class Products extends React.Component {
   constructor() {
     super();
@@ -28,6 +30,7 @@ class Products extends React.Component {
 
     return (
       <div>
+        <ProductEntryForm/>
         <h5>Your Catalog</h5>
         <table className='table'>
           <thead>
