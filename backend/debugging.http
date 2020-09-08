@@ -4,11 +4,13 @@ POST  http://localhost:5000/info/add
 Content-Type: application/json
 
 {
-    "username":"erick-pacheco",
-    "description": "posting",
-    "date": "6/9/20"
+    "username":"bugs tracker",
+    "description":"Users db is not currently working",
+    "status": "open"
 }
+### get bugs
 
+GET  http://localhost:5000/info/
 ### testing get request for users database
 
 POST http://localhost:5000/users/add

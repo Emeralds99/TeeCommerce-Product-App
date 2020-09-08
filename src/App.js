@@ -5,13 +5,14 @@ import Homepage from './components/Homepage.component'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import Users from "./components/Users";
 import Information from './components/information.component'
+import Download from "./components/Download.csv";
  
 function App() {
   return (
     <Router>
       <div >
         
-        <ul className='container d-flex flex-column flex-md-row justify-content-between'>
+        <ul className='d-flex flex-column flex-md-row  justify-content-left'>
           <li className='nav-item nav-link'>
             <Link to="/">Home</Link>
           </li>
@@ -22,8 +23,9 @@ function App() {
             <Link to='/users'>Users</Link>
           </li>
           <li className='nav-item nav-link'>
-            <Link to='/info'>Information</Link>
+            <Link to='/tickets'>Ticket Q</Link>
           </li>
+          <Download/>
         </ul>
       </div>
       <hr/>
@@ -39,7 +41,7 @@ function App() {
         <Route path='/users'>
           <Users/>
         </Route>
-        <Route path='/info'>
+        <Route path='/tickets'>
           <Information/>
         </Route>
       </Switch>

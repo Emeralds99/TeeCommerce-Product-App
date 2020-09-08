@@ -13,6 +13,7 @@ class Products extends React.Component {
       })
       .catch((err) => console.log(err));
   }
+
   callApi = async () => {
     const response = await fetch("http://localhost:5000/products/");
     const body = await response.json();
@@ -27,12 +28,10 @@ class Products extends React.Component {
 
     return (
       <div>
+        <h5>Your Catalog</h5>
         <table className='table'>
           <thead>
             <tr>
-              <th scope='col'>
-                ID
-              </th>
               <th scope='col'>
                 Name
               </th>
@@ -40,21 +39,36 @@ class Products extends React.Component {
                 Brand
               </th>
               <th scope='col'>
-                Last Update
+                Price
+              </th>
+              <th scope='col'>
+                Edit
+              </th>
+              <th scope='col'>
+                Delete
               </th>
             </tr>
           </thead>
           <tbody>
             
+          {products.map((product) =>
+            <tr key={product._id}>
+              <td>{product.name}</td>
+              <td>{product.brand}</td>
+              <td>{product.price}</td>
+              <th>Edit</th>
+              <th>Delete  </th>
+            </tr>
+            
+          
+          )}
           </tbody>
 
         </table>
 
-          {products.map((product) =>
-            <p key={product._id}>{product.name}</p>
-          )}
       </div>
     );
   }
 }
+
 export default Products;

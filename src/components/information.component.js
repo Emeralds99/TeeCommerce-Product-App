@@ -25,10 +25,44 @@ class Information extends React.Component {
     console.log({info})
     return (
       <div>
-          {info.map((info) =>
-            <p key={info._id}>{info.username}</p>
-          )}
-      </div>
+      <h5>Your Catalog</h5>
+      <table className='table'>
+        <thead>
+          <tr>
+            <th scope='col'>
+              Name
+            </th>
+            <th scope='col'>
+              Description
+            </th>
+            <th scope='col'>
+              Status
+            </th>
+            <th scope='col'>
+              Edit
+            </th>
+            <th scope='col'>
+              Delete
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        {info.map((info) =>
+          <tr key={info._id}>
+            <td>{info.description}</td>
+            <td>{info.status}</td>
+            <th>Edit</th>
+            <th>Delete  </th>
+          </tr>
+          
+        
+        )}
+        </tbody>
+
+      </table>
+
+    </div>
     );
   }
 }
