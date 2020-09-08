@@ -28,7 +28,7 @@ function App() {
           <Download/>
         </ul>
       </div>
-      <hr/>
+      
 
 
       <Switch>

@@ -12,7 +12,7 @@ class ProductEntryForm extends React.Component {
       
             <Content>
                 <Form>
-                    <h1>Product Entry Form</h1>
+                    <h5>Product Entry Form</h5>
                     <Form.Group>
                         <Form.Label htmlFor='sku'>SKU</Form.Label>
                         <Form.Control id='sku' name='sku' type='text' ></Form.Control>
