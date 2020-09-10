@@ -23,7 +23,7 @@ function App() {
             <Link to='/users'>Users</Link>
           </li>
           <li className='nav-item nav-link'>
-            <Link to='/tickets'>Ticket Q</Link>
+            <Link to='/tickets'>Info</Link>
           </li>
           <Download/>
         </ul>
