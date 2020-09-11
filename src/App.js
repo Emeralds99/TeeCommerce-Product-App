@@ -25,7 +25,9 @@ function App() {
           <li className='nav-item nav-link'>
             <Link to='/tickets'>Info</Link>
           </li>
-          <Download/>
+          <li className='nav-item nav-link'>
+            <Link to='/download'>.csv</Link>
+          </li>
         </ul>
       </div>
       
@@ -43,6 +45,9 @@ function App() {
         </Route>
         <Route path='/tickets'>
           <Information/>
+        </Route>
+        <Route path='/download'>
+          <Download/>
         </Route>
       </Switch>
     </Router>

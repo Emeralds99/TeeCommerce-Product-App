@@ -30,7 +30,9 @@ class Download extends React.Component {
 
   render() {
     return (
-        <button className="btn btn-link my-2 my-sm-0"  type="submit">.csv</button>
+      <>
+      <button className="btn btn-link my-2 my-sm-0"  type="submit">.csv</button>
+      </>
     )
   }
 }
