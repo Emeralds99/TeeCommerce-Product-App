@@ -29,7 +29,7 @@ router.route("/add").post((req, res) => {
   const fixedShippingRate = req.body.fixedShippingRate;
   const brand = req.body.brand;
   const tax = req.body.tax;
-  const optionsType = req.body.optionsType;
+  const options = req.body.options;
   const shipping = req.body.shipping;
 
   const newProducts = new Products({
@@ -50,7 +50,8 @@ router.route("/add").post((req, res) => {
     fixedShippingRateOnly,
     fixedShippingRate,
     tax,
-    optionsType,
+    options,
+    choices,
     shipping
   });
 

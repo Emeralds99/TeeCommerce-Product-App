@@ -39,15 +39,33 @@ class ProductEntryForm extends React.Component {
     form should have a onChange handler
     */
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     /** set it up similar to post/ route */
 
     /** TODO: look up bootstrap-react-table-2 for displaying data */
     this.state = {
-      sku: "",
-      quantity: "",
+      nameTranslated: { en: 'hello', es: 'hola' },
+      tax: { enabledManualTaxes: ['1'] },
+      categoryIds: [[1], [2]],
+      options: [],
+      _id: '5f540753db2f673bb006fd32',
+      Options: [],
+      name: 'update',
+      sku: '3D57JJFF0',
+      quantity: 1,
+      price: 19.99,
+      brand: 'American Wino',
+      compareToPrice: 5,
+      isShippingRequired: true,
+      weight: 5,
+      enabled: true,
+      description: 'Stainless Steel Wine Tumbler for all your Winetumbling needs!',
+      productClassId: 4,
+      fixedShippingRateOnly: false,
+      fixedShippingRate: 20,
+      __v: 0
     };
   }
 
