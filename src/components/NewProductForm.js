@@ -46,6 +46,7 @@ class ProductEntryForm extends React.Component {
 
     /** TODO: look up bootstrap-react-table-2 for displaying data */
     this.state = {
+
       nameTranslated: {
         en: "",
         es: ""
@@ -77,7 +78,6 @@ class ProductEntryForm extends React.Component {
       productClassId: 0,
       fixedShippingRateOnly: false,
       fixedShippingRate: 0,
-
     };
   }
 
