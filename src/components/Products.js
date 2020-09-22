@@ -36,7 +36,7 @@ class Products extends React.Component {
           <thead>
             <tr>
               <th scope='col'>
-                Name
+                { this.state.response.name }
               </th>
               <th scope='col'>
                 Brand

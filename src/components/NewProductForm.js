@@ -39,32 +39,68 @@ class ProductEntryForm extends React.Component {
     form should have a onChange handler
     */
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     /** set it up similar to post/ route */
 
     /** TODO: look up bootstrap-react-table-2 for displaying data */
     this.state = {
+      nameTranslated: {
+        en: "",
+        es: ""
+      },
+      tax: {
+        enabledManualTaxes: [
+          ""
+        ]
+      },
+      categoryIds: [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      name: "",
+      _id: "",
       sku: "",
-      quantity: "",
+      quantity: 0,
+      price: 0,
+      brand: "",
+      compareToPrice: 0,
+      isShippingRequired: true,
+      weight: 0,
+      enabled: true,
+      description: "",
+      productClassId: 0,
+      fixedShippingRateOnly: false,
+      fixedShippingRate: 0,
+
     };
   }
 
 
   onChange = (event) => {
+    event.preventDefault();
+    let name = event.target.name
+    let value = event.target.value
     this.setState({
-      [event.target.name]: event.target.value,
+      [name]: value,
     });
-    debugger;
+    // debugger;
+    console.log(this.state)
   };
 
-  onSubmit(event) {
+  onSubmit = (event) => {
+    const data = this.state
       event.preventDefault()
-      axios.request(options).then(function (response) {
+      debugger;
+      axios.post("http://localhost:5000/products/add", {data}).then((response) => {
         console.log(response.data);
       }).catch(function (error) {
-        console.error(error);
+        console.log(error);
       });  
     }      
 
@@ -79,6 +115,7 @@ class ProductEntryForm extends React.Component {
               <Form.Control
                 id="sku"
                 name="sku"
+                value={this.state.sku}
                 type="text"
                 onChange={this.onChange}
               ></Form.Control>
@@ -88,6 +125,7 @@ class ProductEntryForm extends React.Component {
               <Form.Control
                 id="quantity"
                 name="quantity"
+                value={this.state.quantity}
                 type="number"
                 onChange={this.onChange}
               ></Form.Control>
@@ -96,8 +134,10 @@ class ProductEntryForm extends React.Component {
               <Form.Label htmlFor="productName">Product Name</Form.Label>
               <Form.Control
                 id="productName"
-                name="productName"
+                name="name"
+                value={this.state.name}
                 type="text"
+                onChange={this.onChange}
               ></Form.Control>
             </Form.Group>
             {/* Look up bootstrap form options for indented lines this should be the
@@ -108,7 +148,9 @@ class ProductEntryForm extends React.Component {
               </Form.Label>
               <Form.Control
                 id="englishProductText"
-                name="englishProductText"
+                name="en"
+                value={this.state.nameTranslated.en}
+                onChange={this.onChange}
                 type="text"
               ></Form.Control>
             </Form.Group>
@@ -118,7 +160,9 @@ class ProductEntryForm extends React.Component {
               </Form.Label>
               <Form.Control
                 id="spanishProductText"
-                name="spanishProductText"
+                name="es"
+                value={this.state.nameTranslated.es}
+                onChange={this.onChange}
                 type="text"
               ></Form.Control>
             </Form.Group>
@@ -127,6 +171,8 @@ class ProductEntryForm extends React.Component {
               <Form.Control
                 id="price"
                 name="price"
+                value={this.state.price}
+                onChange={this.onChange}
                 type="number"
               ></Form.Control>
             </Form.Group>
@@ -135,6 +181,8 @@ class ProductEntryForm extends React.Component {
               <Form.Control
                 id="compareToPrice"
                 name="compareToPrice"
+                value={this.state.compareToPrice}
+                onChange={this.onChange}
                 type="number"
               ></Form.Control>
             </Form.Group>
@@ -145,6 +193,8 @@ class ProductEntryForm extends React.Component {
               <Form.Control
                 id="isShippingRequired"
                 name="isShippingRequired"
+                value={this.state.isShippingRequired}
+                onChange={this.onChange}
                 type="checkbox"
               ></Form.Control>
             </Form.Group>
@@ -153,6 +203,7 @@ class ProductEntryForm extends React.Component {
               <Form.Control
                 id="categoryIds"
                 name="categoryIds"
+                onChange={this.onChange}
                 type="search"
               ></Form.Control>
             </Form.Group>
@@ -161,6 +212,7 @@ class ProductEntryForm extends React.Component {
               <Form.Control
                 id="weight"
                 name="weight"
+                onChange={this.onChange}
                 type="number"
               ></Form.Control>
             </Form.Group>
@@ -169,6 +221,7 @@ class ProductEntryForm extends React.Component {
               <Form.Control
                 id="enabled"
                 name="enabled"
+                onChange={this.onChange}
                 type="checkbox"
               ></Form.Control>
             </Form.Group>
@@ -359,7 +412,7 @@ class ProductEntryForm extends React.Component {
               ></Form.Control>
             </Form.Group>
             <Form.Group>
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" onSubmit={this.onSubmit}>
                 Submit
               </Button>
             </Form.Group>
